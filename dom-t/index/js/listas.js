@@ -1,28 +1,33 @@
+$(document).ready(function(){
+    localStorage.clear();
+});
 $('#restaurante').click(function(){
     $.ajax({
         type:'POST',
         url:'../php/listasRestaurantes.php'             
     })
-    .done(function(lista){
-        //setTimeout("location.href='../../catalogo/html/catalogo.html'");
-        $('#listado').html(lista);
+    .done(function(restaurante){
+        localStorage.setItem('restaurante', restaurante);
+        setTimeout("location.href='../../catalogo/html/catalogo.html'");
     })
     .fail(function(){
         alert('Error en cargar las listas');
     })
     return false;
 });
+
 $('#almacenRopa').click(function(){
     $.ajax({
         type:'POST',
         url:'../php/listasRopa.php'             
     })
-    .done(function(lista){
-        //setTimeout("location.href='../../catalogo/html/catalogo.html'");
-        $('#listado').html(lista);
+    .done(function(ropa){
+        localStorage.setItem('ropa', ropa);
+        setTimeout("location.href='../../catalogo/html/catalogo.html'");
     })
     .fail(function(){
         alert('Error en cargar las listas');
     })
+    
     return false;
 });
