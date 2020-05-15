@@ -130,13 +130,13 @@ CREATE TABLE IF NOT EXISTS `DOM-T`.`cliente` (
   `ferreteria_idferreteria` INT NOT NULL,
   `electrodomesticos_idelectrodomesticos` INT NOT NULL,
   PRIMARY KEY (`idcliente`),
-  INDEX `fk_cliente_computadoras1_idx` (`computadoras_idcomputadoras` ASC) VISIBLE,
-  INDEX `fk_cliente_almacenRopa1_idx` (`almacenRopa_idalmacenRopa` ASC) VISIBLE,
-  INDEX `fk_cliente_restaurate1_idx` (`restaurate_idrestaurate` ASC) VISIBLE,
-  INDEX `fk_cliente_almacenCopiadoras1_idx` (`almacenCopiadoras_idcopiadoras` ASC) VISIBLE,
-  INDEX `fk_cliente_empleado1_idx` (`empleado_idempleado` ASC) VISIBLE,
-  INDEX `fk_cliente_ferreteria1_idx` (`ferreteria_idferreteria` ASC) VISIBLE,
-  INDEX `fk_cliente_electrodomesticos1_idx` (`electrodomesticos_idelectrodomesticos` ASC) VISIBLE,
+  INDEX `fk_cliente_computadoras1_idx` (`computadoras_idcomputadoras` ASC),
+  INDEX `fk_cliente_almacenRopa1_idx` (`almacenRopa_idalmacenRopa` ASC),
+  INDEX `fk_cliente_restaurate1_idx` (`restaurate_idrestaurate` ASC),
+  INDEX `fk_cliente_almacenCopiadoras1_idx` (`almacenCopiadoras_idcopiadoras` ASC),
+  INDEX `fk_cliente_empleado1_idx` (`empleado_idempleado` ASC),
+  INDEX `fk_cliente_ferreteria1_idx` (`ferreteria_idferreteria` ASC),
+  INDEX `fk_cliente_electrodomesticos1_idx` (`electrodomesticos_idelectrodomesticos` ASC),
   CONSTRAINT `fk_cliente_computadoras1`
     FOREIGN KEY (`computadoras_idcomputadoras`)
     REFERENCES `DOM-T`.`almacenComputadoras` (`idcomputadoras`)
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `DOM-T`.`categoriaRestautante` (
   `categoria` VARCHAR(45) NOT NULL,
   `restaurate_idrestaurate` INT NOT NULL,
   PRIMARY KEY (`idcategoriaRestautante`),
-  INDEX `fk_categoriaRestautante_restaurate1_idx` (`restaurate_idrestaurate` ASC) VISIBLE,
+  INDEX `fk_categoriaRestautante_restaurate1_idx` (`restaurate_idrestaurate` ASC),
   CONSTRAINT `fk_categoriaRestautante_restaurate1`
     FOREIGN KEY (`restaurate_idrestaurate`)
     REFERENCES `DOM-T`.`restaurate` (`idrestaurate`)
@@ -236,14 +236,14 @@ CREATE TABLE IF NOT EXISTS `DOM-T`.`gerente` (
   `ferreteria_idferreteria` INT NOT NULL,
   `electrodomesticos_idelectrodomesticos` INT NOT NULL,
   PRIMARY KEY (`idgerente`),
-  INDEX `fk_gerente_restaurate_idx` (`restaurate_idrestaurate` ASC) VISIBLE,
-  INDEX `fk_gerente_almacenRopa1_idx` (`almacenRopa_idalmacenRopa` ASC) VISIBLE,
-  INDEX `fk_gerente_computadoras1_idx` (`computadoras_idcomputadoras` ASC) VISIBLE,
-  INDEX `fk_gerente_almacenCelulares1_idx` (`almacenCelulares_idcelulares` ASC) VISIBLE,
-  INDEX `fk_gerente_almacenCopiadoras1_idx` (`almacenCopiadoras_idcopiadoras` ASC) VISIBLE,
-  INDEX `fk_gerente_papeleria1_idx` (`papeleria_idpapelerias` ASC) VISIBLE,
-  INDEX `fk_gerente_ferreteria1_idx` (`ferreteria_idferreteria` ASC) VISIBLE,
-  INDEX `fk_gerente_electrodomesticos1_idx` (`electrodomesticos_idelectrodomesticos` ASC) VISIBLE,
+  INDEX `fk_gerente_restaurate_idx` (`restaurate_idrestaurate` ASC),
+  INDEX `fk_gerente_almacenRopa1_idx` (`almacenRopa_idalmacenRopa` ASC),
+  INDEX `fk_gerente_computadoras1_idx` (`computadoras_idcomputadoras` ASC),
+  INDEX `fk_gerente_almacenCelulares1_idx` (`almacenCelulares_idcelulares` ASC),
+  INDEX `fk_gerente_almacenCopiadoras1_idx` (`almacenCopiadoras_idcopiadoras` ASC),
+  INDEX `fk_gerente_papeleria1_idx` (`papeleria_idpapelerias` ASC),
+  INDEX `fk_gerente_ferreteria1_idx` (`ferreteria_idferreteria` ASC),
+  INDEX `fk_gerente_electrodomesticos1_idx` (`electrodomesticos_idelectrodomesticos` ASC),
   CONSTRAINT `fk_gerente_restaurate`
     FOREIGN KEY (`restaurate_idrestaurate`)
     REFERENCES `DOM-T`.`restaurate` (`idrestaurate`)
@@ -297,7 +297,7 @@ CREATE TABLE IF NOT EXISTS `DOM-T`.`menu` (
   `detalles` TEXT NOT NULL,
   `restaurate_idrestaurate` INT NOT NULL,
   PRIMARY KEY (`idmenu`),
-  INDEX `fk_menu_restaurate1_idx` (`restaurate_idrestaurate` ASC) VISIBLE,
+  INDEX `fk_menu_restaurate1_idx` (`restaurate_idrestaurate` ASC),
   CONSTRAINT `fk_menu_restaurate1`
     FOREIGN KEY (`restaurate_idrestaurate`)
     REFERENCES `DOM-T`.`restaurate` (`idrestaurate`)
@@ -323,14 +323,14 @@ CREATE TABLE IF NOT EXISTS `DOM-T`.`producto` (
   `ferreteria_idferreteria` INT NOT NULL,
   `electrodomesticos_idelectrodomesticos` INT NOT NULL,
   PRIMARY KEY (`idproducto`),
-  INDEX `fk_producto_almacenRopa1_idx` (`almacenRopa_idalmacenRopa` ASC) VISIBLE,
-  INDEX `fk_producto_computadoras1_idx` (`computadoras_idcomputadoras` ASC) VISIBLE,
-  INDEX `fk_producto_almacenCelulares1_idx` (`almacenCelulares_idcelulares` ASC) VISIBLE,
-  INDEX `fk_producto_cliente1_idx` (`cliente_idcliente` ASC) VISIBLE,
-  INDEX `fk_producto_almacenCopiadoras1_idx` (`almacenCopiadoras_idcopiadoras` ASC) VISIBLE,
-  INDEX `fk_producto_papeleria1_idx` (`papeleria_idpapelerias` ASC) VISIBLE,
-  INDEX `fk_producto_ferreteria1_idx` (`ferreteria_idferreteria` ASC) VISIBLE,
-  INDEX `fk_producto_electrodomesticos1_idx` (`electrodomesticos_idelectrodomesticos` ASC) VISIBLE,
+  INDEX `fk_producto_almacenRopa1_idx` (`almacenRopa_idalmacenRopa` ASC),
+  INDEX `fk_producto_computadoras1_idx` (`computadoras_idcomputadoras` ASC),
+  INDEX `fk_producto_almacenCelulares1_idx` (`almacenCelulares_idcelulares` ASC),
+  INDEX `fk_producto_cliente1_idx` (`cliente_idcliente` ASC),
+  INDEX `fk_producto_almacenCopiadoras1_idx` (`almacenCopiadoras_idcopiadoras` ASC),
+  INDEX `fk_producto_papeleria1_idx` (`papeleria_idpapelerias` ASC),
+  INDEX `fk_producto_ferreteria1_idx` (`ferreteria_idferreteria` ASC),
+  INDEX `fk_producto_electrodomesticos1_idx` (`electrodomesticos_idelectrodomesticos` ASC),
   CONSTRAINT `fk_producto_almacenRopa1`
     FOREIGN KEY (`almacenRopa_idalmacenRopa`)
     REFERENCES `DOM-T`.`almacenRopa` (`idalmacenRopa`)
@@ -384,8 +384,8 @@ CREATE TABLE IF NOT EXISTS `DOM-T`.`servicioTecnico` (
   `computadoras_idcomputadoras` INT NOT NULL,
   `almacenCelulares_idcelulares` INT NOT NULL,
   PRIMARY KEY (`idservicioTecnico`),
-  INDEX `fk_servicioTecnico_computadoras1_idx` (`computadoras_idcomputadoras` ASC) VISIBLE,
-  INDEX `fk_servicioTecnico_almacenCelulares1_idx` (`almacenCelulares_idcelulares` ASC) VISIBLE,
+  INDEX `fk_servicioTecnico_computadoras1_idx` (`computadoras_idcomputadoras` ASC),
+  INDEX `fk_servicioTecnico_almacenCelulares1_idx` (`almacenCelulares_idcelulares` ASC),
   CONSTRAINT `fk_servicioTecnico_computadoras1`
     FOREIGN KEY (`computadoras_idcomputadoras`)
     REFERENCES `DOM-T`.`almacenComputadoras` (`idcomputadoras`)
@@ -410,11 +410,11 @@ CREATE TABLE IF NOT EXISTS `DOM-T`.`pedido` (
   `servicioTecnico_idservicioTecnico` INT NOT NULL,
   `empleado_idempleado` INT NOT NULL,
   PRIMARY KEY (`idpedido`),
-  INDEX `fk_pedido_cliente1_idx` (`cliente_idcliente` ASC) VISIBLE,
-  INDEX `fk_pedido_producto1_idx` (`producto_idproducto` ASC) VISIBLE,
-  INDEX `fk_pedido_menu1_idx` (`menu_idmenu` ASC) VISIBLE,
-  INDEX `fk_pedido_servicioTecnico1_idx` (`servicioTecnico_idservicioTecnico` ASC) VISIBLE,
-  INDEX `fk_pedido_empleado1_idx` (`empleado_idempleado` ASC) VISIBLE,
+  INDEX `fk_pedido_cliente1_idx` (`cliente_idcliente` ASC),
+  INDEX `fk_pedido_producto1_idx` (`producto_idproducto` ASC),
+  INDEX `fk_pedido_menu1_idx` (`menu_idmenu` ASC),
+  INDEX `fk_pedido_servicioTecnico1_idx` (`servicioTecnico_idservicioTecnico` ASC),
+  INDEX `fk_pedido_empleado1_idx` (`empleado_idempleado` ASC),
   CONSTRAINT `fk_pedido_cliente1`
     FOREIGN KEY (`cliente_idcliente`)
     REFERENCES `DOM-T`.`cliente` (`idcliente`)
@@ -451,7 +451,7 @@ CREATE TABLE IF NOT EXISTS `DOM-T`.`marca` (
   `marca` VARCHAR(45) NOT NULL,
   `producto_idproducto` INT NOT NULL,
   PRIMARY KEY (`idmarca`),
-  INDEX `fk_marca_producto2_idx` (`producto_idproducto` ASC) VISIBLE,
+  INDEX `fk_marca_producto2_idx` (`producto_idproducto` ASC),
   CONSTRAINT `fk_marca_producto2`
     FOREIGN KEY (`producto_idproducto`)
     REFERENCES `DOM-T`.`producto` (`idproducto`)
@@ -468,7 +468,7 @@ CREATE TABLE IF NOT EXISTS `DOM-T`.`categoria` (
   `categoria` VARCHAR(45) NOT NULL,
   `producto_idproducto` INT NOT NULL,
   PRIMARY KEY (`idcategoria`),
-  INDEX `fk_categoria_producto1_idx` (`producto_idproducto` ASC) VISIBLE,
+  INDEX `fk_categoria_producto1_idx` (`producto_idproducto` ASC),
   CONSTRAINT `fk_categoria_producto1`
     FOREIGN KEY (`producto_idproducto`)
     REFERENCES `DOM-T`.`producto` (`idproducto`)
@@ -485,7 +485,7 @@ CREATE TABLE IF NOT EXISTS `DOM-T`.`talla` (
   `talla` VARCHAR(20) NOT NULL,
   `producto_idproducto` INT NOT NULL,
   PRIMARY KEY (`idtalla`),
-  INDEX `fk_talla_producto1_idx` (`producto_idproducto` ASC) VISIBLE,
+  INDEX `fk_talla_producto1_idx` (`producto_idproducto` ASC),
   CONSTRAINT `fk_talla_producto1`
     FOREIGN KEY (`producto_idproducto`)
     REFERENCES `DOM-T`.`producto` (`idproducto`)
@@ -502,7 +502,7 @@ CREATE TABLE IF NOT EXISTS `DOM-T`.`modelo` (
   `modelo` VARCHAR(45) NOT NULL,
   `producto_idproducto` INT NOT NULL,
   PRIMARY KEY (`idmodelo`),
-  INDEX `fk_modelo_producto1_idx` (`producto_idproducto` ASC) VISIBLE,
+  INDEX `fk_modelo_producto1_idx` (`producto_idproducto` ASC),
   CONSTRAINT `fk_modelo_producto1`
     FOREIGN KEY (`producto_idproducto`)
     REFERENCES `DOM-T`.`producto` (`idproducto`)
@@ -519,7 +519,7 @@ CREATE TABLE IF NOT EXISTS `DOM-T`.`serie` (
   `serie` VARCHAR(45) NOT NULL,
   `producto_idproducto` INT NOT NULL,
   PRIMARY KEY (`idserie`),
-  INDEX `fk_serie_producto1_idx` (`producto_idproducto` ASC) VISIBLE,
+  INDEX `fk_serie_producto1_idx` (`producto_idproducto` ASC),
   CONSTRAINT `fk_serie_producto1`
     FOREIGN KEY (`producto_idproducto`)
     REFERENCES `DOM-T`.`producto` (`idproducto`)
@@ -536,7 +536,7 @@ CREATE TABLE IF NOT EXISTS `DOM-T`.`marca` (
   `marca` VARCHAR(45) NOT NULL,
   `producto_idproducto` INT NOT NULL,
   PRIMARY KEY (`idmarca`),
-  INDEX `fk_marca_producto2_idx` (`producto_idproducto` ASC) VISIBLE,
+  INDEX `fk_marca_producto2_idx` (`producto_idproducto` ASC),
   CONSTRAINT `fk_marca_producto2`
     FOREIGN KEY (`producto_idproducto`)
     REFERENCES `DOM-T`.`producto` (`idproducto`)
@@ -561,14 +561,14 @@ CREATE TABLE IF NOT EXISTS `DOM-T`.`logo` (
   `almacenRopa_idalmacenRopa` INT NOT NULL,
   `electrodomesticos_idelectrodomesticos` INT NOT NULL,
   PRIMARY KEY (`idlogo`),
-  INDEX `fk_logo_almacenComputadoras1_idx` (`almacenComputadoras_idcomputadoras` ASC) VISIBLE,
-  INDEX `fk_logo_almacenCelulares1_idx` (`almacenCelulares_idcelulares` ASC) VISIBLE,
-  INDEX `fk_logo_almacenCopiadoras1_idx` (`almacenCopiadoras_idcopiadoras` ASC) VISIBLE,
-  INDEX `fk_logo_papeleria1_idx` (`papeleria_idpapelerias` ASC) VISIBLE,
-  INDEX `fk_logo_ferreteria1_idx` (`ferreteria_idferreteria` ASC) VISIBLE,
-  INDEX `fk_logo_restaurate1_idx` (`restaurate_idrestaurate` ASC) VISIBLE,
-  INDEX `fk_logo_almacenRopa1_idx` (`almacenRopa_idalmacenRopa` ASC) VISIBLE,
-  INDEX `fk_logo_electrodomesticos1_idx` (`electrodomesticos_idelectrodomesticos` ASC) VISIBLE,
+  INDEX `fk_logo_almacenComputadoras1_idx` (`almacenComputadoras_idcomputadoras` ASC),
+  INDEX `fk_logo_almacenCelulares1_idx` (`almacenCelulares_idcelulares` ASC),
+  INDEX `fk_logo_almacenCopiadoras1_idx` (`almacenCopiadoras_idcopiadoras` ASC),
+  INDEX `fk_logo_papeleria1_idx` (`papeleria_idpapelerias` ASC),
+  INDEX `fk_logo_ferreteria1_idx` (`ferreteria_idferreteria` ASC),
+  INDEX `fk_logo_restaurate1_idx` (`restaurate_idrestaurate` ASC),
+  INDEX `fk_logo_almacenRopa1_idx` (`almacenRopa_idalmacenRopa` ASC),
+  INDEX `fk_logo_electrodomesticos1_idx` (`electrodomesticos_idelectrodomesticos` ASC),
   CONSTRAINT `fk_logo_almacenComputadoras1`
     FOREIGN KEY (`almacenComputadoras_idcomputadoras`)
     REFERENCES `DOM-T`.`almacenComputadoras` (`idcomputadoras`)

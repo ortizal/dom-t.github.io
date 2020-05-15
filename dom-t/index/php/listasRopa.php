@@ -1,4 +1,4 @@
-<table>
+<table class = "table table-bordered">
     <tr>
         <th>TELEFONO</th>
         <th>TELEFONO</th>
@@ -7,7 +7,7 @@
     require_once '../../conexion/php/conexion.php';
     function get_listasRopa(){
         $conn = getConn();   
-        $query = 'SELECT * FROM ropa';
+        $query = 'SELECT * FROM almacenropa';
         $resultado = $conn->query($query);
         while ( $row = $resultado->fetch_array(MYSQLI_ASSOC)){
             $ropa = "$row[nombre]";

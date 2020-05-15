@@ -1,4 +1,4 @@
-<table>
+<table class = "table table-bordered">
 <tr>
     <th>NOMBRE</th>
     <th>TELEFONO</th>
