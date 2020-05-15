@@ -8,5 +8,5 @@
            echo "<p>$row[nombre]</p></br>";
         }    
     }
-    
+    echo get_listasRestaurante();
 ?>
