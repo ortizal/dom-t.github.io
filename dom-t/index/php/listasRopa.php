@@ -1,3 +1,8 @@
+<table>
+    <tr>
+        <th>TELEFONO</th>
+        <th>TELEFONO</th>
+    </tr>
 <?php 
     require_once '../../conexion/php/conexion.php';
     function get_listasRopa(){
@@ -5,8 +10,17 @@
         $query = 'SELECT * FROM ropa';
         $resultado = $conn->query($query);
         while ( $row = $resultado->fetch_array(MYSQLI_ASSOC)){
-            echo "<p>$row[nombre]</p></br>";
+            $ropa = "$row[nombre]";
+            $telefono = "$row[telefono]";
+            ?>
+            <tr>
+            <tr>
+                <td><?php echo $ropa?></td>
+                <td><?php echo $telefono?></td>
+            </tr>
+            <?php
         }
     }
     echo get_listasRopa();
 ?>
+</table>
