@@ -14,7 +14,11 @@
             $telefono = "$row[telefono]";
             ?>
             <tr>
-                <td><?php echo $restaurante?></td>
+                <td>
+                <div class="imagenes">    
+                    <?php echo $restaurante?>
+                </div>
+                </td>
                 <td><?php echo $telefono?></td>
             </tr>
             <?php
