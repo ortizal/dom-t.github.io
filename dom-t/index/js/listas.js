@@ -15,7 +15,6 @@ $('#restaurante').click(function(){
     })
     return false;
 });
-
 $('#almacenRopa').click(function(){
     $.ajax({
         type:'POST',
@@ -29,5 +28,19 @@ $('#almacenRopa').click(function(){
         alert('Error en cargar las listas');
     })
     
+    return false;
+});
+$('#computadoras').click(function(){
+    $.ajax({
+        type:'POST',
+        url:'../php/almacenComputadoras.php'             
+    })
+    .done(function(computadoras){
+        localStorage.setItem('computadoras', computadoras);
+        setTimeout("location.href='../../catalogo/html/catalogo.html'");
+    })
+    .fail(function(){
+        alert('Error en cargar las listas');
+    })
     return false;
 });
