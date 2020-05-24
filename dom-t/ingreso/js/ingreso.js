@@ -18,6 +18,7 @@ $(document).ready(function(){
             data: formulario,
             success:function(r){
                 if (r == 1){
+                    location.href('ingresoImagenes.html');
                     alert ("Agregado con exito");
                 }else {
                     alert ("Error en la carga de archivos");
@@ -39,13 +40,14 @@ $(document).ready(function(){
     });
     $('#enviarImagen').click(function(){
         var formulario = $('#formImagenes').serialize();
+        alert (formulario);
         $.ajax({
             type:'POST',
             url:'../php/envioImagenes.php',
             data: formulario,
             success:function(r){
                 if (r == 1){
-                    alert ("Agregado con exito");
+                    alert ("Imagen Agregada con exito");
                 }else {
                     alert ("Error en la carga de archivos");
                 }
