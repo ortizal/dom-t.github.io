@@ -63,36 +63,49 @@
                 <form action="" id="formCategoria" method="post">
                     <section>
                         <ul>
-                            <li>
-                                <div>
-                                        Nombre:
-                                    <input type="text" name="nombre" placeholder="NOMBRE" required>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                        Telefono:
-                                    <input type="text" name="telefono" placeholder="TELEFONO" required>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    Correo Electronico:
-                                    <input type="text" name="correo" placeholder="CORREO ELECTRONICO" required>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    Direccion:
-                                    <input type="text" name="direccion" placeholder="DIRECCION" required>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    Categoria:
-                                    <select name="categoria" id="listCategoria"></select>
-                                </div>
-                            </li>
+                            <div class="row">
+                                <li class="col-lg-4">
+                                    <div>
+                                        Nombre: <br>
+                                        <input type="text" name="nombre" placeholder="NOMBRE" required>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4">
+                                    <div>
+                                        Telefono: <br>
+                                        <input type="text" name="telefono" placeholder="TELEFONO" required>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4">
+                                    <div>
+                                        Correo Electronico: <br>
+                                        <input type="text" name="correo" placeholder="CORREO ELECTRONICO" required>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="row">
+                                <li class="col-lg-4">
+                                    <div>
+                                        Direccion: <br>
+                                        <input type="text" name="direccion" placeholder="DIRECCION" required>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4">
+                                    <div>
+                                        Categoria: <br>
+                                        <select name="categoria" id="listCategoria"></select>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4">
+                                    <div>
+                                        Subcategoria: <br>
+                                        <select name="subCategoria" id="listSubCategoria">
+                                            <option value="0">--Seleccione una opcion--</option>
+                                        </select>
+                                    </div>
+                                </li>
+                            </div>
+                            
                         </ul>
                         <input type="submit" class="enviar" id="enviar" value="Enviar">
                     </section>

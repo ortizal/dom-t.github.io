@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    /* Cargar y enviar Categoria */
+    /* Cargar Categoria */
     $.ajax({
         type: 'POST',
         url: '../php/categoria.php'
@@ -10,6 +10,22 @@ $(document).ready(function(){
     .fail(function(){
         alert('Error en cargar las listas');
     });
+    /* Cargar SubCategoria */
+    $('#listCategoria').on('change', function(){
+        var id = $('#listCategoria').val();
+        $.ajax({
+            type: 'POST',
+            url: '../php/subCategoria.php',
+            data: {'id':id}
+        })
+        .done(function(categoria){
+            $('#listSubCategoria').html(categoria);
+        })
+        .fail(function(){
+            alert('Error en cargar las listas');
+        });
+    });
+    /* Enviar Restaurante */
     $('#enviar').click(function(){
         var formulario = $('#formCategoria').serialize();
         $.ajax({
@@ -18,7 +34,7 @@ $(document).ready(function(){
             data: formulario,
             success:function(r){
                 if (r == 1){
-                    location.href('ingresoImagenes.html');
+                    setTimeout("location.href='../html/ingresoImagenes.html'");
                     alert ("Agregado con exito");
                 }else {
                     alert ("Error en la carga de archivos");
@@ -38,6 +54,7 @@ $(document).ready(function(){
     .fail(function(){
         alert('Error en cargar las listas');
     });
+    /* Enviar Imagenes */
     $('#enviarImagen').click(function(){
         var formulario = $('#formImagenes').serialize();
         alert (formulario);
