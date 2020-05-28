@@ -54,27 +54,8 @@ $(document).ready(function(){
     .fail(function(){
         alert('Error en cargar las listas');
     });
-    /* Enviar Imagenes */
-/*     $('#enviarImagen').click(function(){
-        var formulario = $('#formImagenes').serialize();
-        alert (formulario);
-        $.ajax({
-            type:'POST',
-            url:,
-            data: formulario,
-            success:function(r){
-                if (r == 1){
-                    alert ("Imagen Agregada con exito");
-                }else {
-                    alert ("Error en la carga de archivos");
-                }
-            }
-        });
-        return false;
-    }); */
-
     $("#enviarImagen").click(function(){
-        var frmData = new FormData('#formImagenes')[0];
+        var frmData = new FormData($('#formImagenes')[0]);
         /* frmData.append("imagen",$()) */
         $.ajax({
             type:'POST',
@@ -83,8 +64,11 @@ $(document).ready(function(){
             processData:false,
             contentType: false,
             cache: false,
+            beforesend: function(){
+
+            },
             success: function(response){
-                alert (response);
+                    alert("Imagen cargada");
             }
         })
         return false;
