@@ -5,8 +5,9 @@ $telefono = $_POST['telefono'];
 $correo = $_POST['correo'];
 $direccion = $_POST['direccion'];
 $categoria = $_POST['categoria'];
+$subCategoria = $_POST['subCategoria'];
 $conn = getConn();
-$query = "INSERT INTO almacen (nombre, telefono, email, direccion, categoriaAlmacen_idtable1) 
-            VAlUE ('$nombre','$telefono','$correo','$direccion','$categoria')";
+$query = "INSERT INTO almacen (nombre, telefono, email, direccion, categoriaAlmacen_idtable1, subCategoria_idsubCategoria) 
+            VAlUE ('$nombre','$telefono','$correo','$direccion','$categoria','$subCategoria')";
 echo mysqli_query($conn, $query);
 ?>

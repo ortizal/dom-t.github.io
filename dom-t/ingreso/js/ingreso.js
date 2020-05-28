@@ -55,12 +55,12 @@ $(document).ready(function(){
         alert('Error en cargar las listas');
     });
     /* Enviar Imagenes */
-    $('#enviarImagen').click(function(){
+/*     $('#enviarImagen').click(function(){
         var formulario = $('#formImagenes').serialize();
         alert (formulario);
         $.ajax({
             type:'POST',
-            url:'../php/envioImagenes.php',
+            url:,
             data: formulario,
             success:function(r){
                 if (r == 1){
@@ -70,6 +70,23 @@ $(document).ready(function(){
                 }
             }
         });
+        return false;
+    }); */
+
+    $("#enviarImagen").click(function(){
+        var frmData = new FormData('#formImagenes')[0];
+        /* frmData.append("imagen",$()) */
+        $.ajax({
+            type:'POST',
+            url:'../php/envioImagenes.php',
+            data:frmData,
+            processData:false,
+            contentType: false,
+            cache: false,
+            success: function(response){
+                alert (response);
+            }
+        })
         return false;
     });
 });

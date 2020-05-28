@@ -63,10 +63,11 @@
 .section-aside section ul{
     list-style: none;
 }
-/* .section-aside section{
+.section-aside section{
     border:rgb(106, 201, 106) 2px solid;
     border-radius: 15px;
 }
+/* 
 .section-aside section ul{
     list-style: none;
     display: grid;
