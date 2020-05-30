@@ -98,12 +98,30 @@
     text-align: left;
 }
 /* --------------SECTION-IMAGENES----------- */
-.section-aside section ul li .imagenes img{
-    width: 100px;
-    height: 100px;
-    border-radius: 15px;
+form section #seccion{
+    margin: 0.5em;
 }
-.section-aside section ul li .imagenes{
+form section #seccion .categoria{
+    /* border:rgb(106, 201, 106) 2px solid; */
+    border-radius: 3em;
+    margin: 1em;
     text-align: center;
-    margin: 1em auto;
+}
+form section #seccion .categoria:hover{
+    background:rgb(106, 201, 106, 30%) ;
+}
+form section #seccion .categoria a{
+    display: block;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+form section #seccion .categoria img {
+    width: 150px;
+    height: 150px;
+    border-radius: 3em;
 }

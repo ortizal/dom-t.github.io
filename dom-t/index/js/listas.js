@@ -1,5 +1,23 @@
 $(document).ready(function(){
     localStorage.clear();
+    $formulario = $('#indexFormulario').serialize();
+    $.ajax ({
+        type: 'POST',
+        url:'../php/categoria.php',
+        success:function(r){
+           $('#seccion').html(r);
+        }
+
+    });
+    $.ajax ({
+        type: 'POST',
+        url:'../php/categoriaNav.php',
+        success:function(re){
+           $('#catalogoNav').html(re);
+        }
+
+    });
+
 });
 $('#restaurante').click(function(){
     $.ajax({
