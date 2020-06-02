@@ -17,48 +17,27 @@ $(document).ready(function(){
         }
 
     });
+});
+/* function imgCategoria(){
+    let valueCat = parseInt(document.getElementsByClassName('categoria')).value;
+    console.log(valueCat);
+} */
 
-});
-$('#restaurante').click(function(){
-    $.ajax({
-        type:'POST',
-        url:'../php/listasRestaurantes.php'             
+function btn_categoria(){
+    var formulario = $('#indexFormulario').serialize();    
+   $.ajax({
+       type:'POST',
+       url:'../php/btn-categoria.php',
+       data:formulario             
+   })
+   .done(function(subCategoria){
+       alert(formulario);
+      // localStorage.setItem('restaurante', restaurante);
+       //setTimeout("location.href='../../catalogo/html/catalogo.html'");
+       $('#article').html(subCategoria);
     })
-    .done(function(restaurante){
-        localStorage.setItem('restaurante', restaurante);
-        setTimeout("location.href='../../catalogo/html/catalogo.html'");
-    })
-    .fail(function(){
-        alert('Error en cargar las listas');
-    })
-    return false;
-});
-$('#almacenRopa').click(function(){
-    $.ajax({
-        type:'POST',
-        url:'../php/listasRopa.php'             
-    })
-    .done(function(ropa){
-        localStorage.setItem('ropa', ropa);
-        setTimeout("location.href='../../catalogo/html/catalogo.html'");
-    })
-    .fail(function(){
-        alert('Error en cargar las listas');
-    })
-    
-    return false;
-});
-$('#computadoras').click(function(){
-    $.ajax({
-        type:'POST',
-        url:'../php/almacenComputadoras.php'             
-    })
-    .done(function(computadoras){
-        localStorage.setItem('computadoras', computadoras);
-        setTimeout("location.href='../../catalogo/html/catalogo.html'");
-    })
-    .fail(function(){
-        alert('Error en cargar las listas');
-    })
-    return false;
-});
+   .fail(function(){
+       alert('Error en cargar las listas');
+   })
+   return false;
+}

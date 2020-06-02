@@ -7,9 +7,7 @@ function getCategoriasindex(){
     $categorias = "<div></div>";
     while ($row = $resultado->fetch_array(MYSQLI_ASSOC)){
         $imagen = base64_encode($row['imagen']);
-         //"<div class='categoria' >$row[nombre]</div>";  data:image/jpg;basse64,
-        $categorias .="<div class='categoria col-lg'><a href='#'><img src='data:image/jpeg;base64,$imagen'></br>$row[nombre]</a></div>";
-
+        $categorias .="<div class = 'categoria col-lg' onclick = 'btn_categoria()' value = $row[idtable1]><a href='#'><img src='data:image/jpeg;base64,$imagen'></br>$row[nombre]</a></div>";
     }
     return $categorias;
 }
