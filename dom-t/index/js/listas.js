@@ -7,7 +7,6 @@ $(document).ready(function(){
         success:function(r){
            $('#seccion').html(r);
         }
-
     });
     $.ajax ({
         type: 'POST',
@@ -15,7 +14,13 @@ $(document).ready(function(){
         success:function(re){
            $('#catalogoNav').html(re);
         }
-
+    });
+    $.ajax ({
+        type: 'POST',
+        url:'../php/subcategoria.php',
+        success:function(sub){
+           $('#article').html(sub);
+        }
     });
 });
 /* function imgCategoria(){
@@ -23,8 +28,11 @@ $(document).ready(function(){
     console.log(valueCat);
 } */
 
-function btn_categoria(){
-    var formulario = $('#indexFormulario').serialize();    
+
+/* function btn_categoria(){
+    var id = $('.categoria').val();    
+    alert (id);
+    return false;
    $.ajax({
        type:'POST',
        url:'../php/btn-categoria.php',
@@ -40,4 +48,4 @@ function btn_categoria(){
        alert('Error en cargar las listas');
    })
    return false;
-}
+} */
