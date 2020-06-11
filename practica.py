@@ -1,7 +1,3 @@
-import pyautogui as p
-comando = print("Ingrese comando: ")
-comando = comando.strip()
-if comando == "pantalla":
-    p.screenshot("Pantalla capturada")
-else:
-    print("Pantalla no capturada")
+print ("Hello world!")
+2 + 3
+print ("I am new programmer")
