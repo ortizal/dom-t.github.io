@@ -30,6 +30,5 @@ $(document).ready(function(){
  /*    }); */
 });
      function categ(){
-        var id = $('.categoria').val();
-        alert (id);
+        alert ($('.categoria').val());
      }
