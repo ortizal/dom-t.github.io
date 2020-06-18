@@ -3,11 +3,19 @@ $(document).ready(function(){
     //$formulario = $('#indexFormulario').serialize();
     $.ajax ({
         type: 'POST',
-        url:'../php/categoria.php',
-        success:function(r){
-           $('#seccion').html(r);
-        }
-    });
+        url:'../php/categoria.php'
+    })
+    .done(function(r){
+        $('#seccion').html(r);
+    })
+    .fail(function(){
+        alert('Error en carga');
+    })
+    $('#seccion').on('change', function(){
+        
+        var id = $('#seccion').val();
+        consolelog(id);
+    })
     $.ajax ({
         type: 'POST',
         url:'../php/categoriaNav.php',
@@ -15,20 +23,4 @@ $(document).ready(function(){
            $('#catalogoNav').html(re);
         }
     });
-/*     $('#seccion').on('change',function(){
-        alert("me diste un toque");
-      
-        var id = $('#seccion').val(); */
-        $.ajax ({
-            type: 'POST',
-            url:'../php/subcategoria.php',
-          /*   data:{'id':id}, */
-            success:function(r){
-                $('#article').html(r);
-            }
-        });
- /*    }); */
 });
-     function categ(){
-        alert ($('.categoria').val());
-     }

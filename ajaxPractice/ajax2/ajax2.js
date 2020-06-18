@@ -1,25 +1,25 @@
-document.getElementById("cargarCatalogo").addEventListener("click",cargarCatalogo);
+document.getElementById("cargaCatalogo").addEventListener("click", cargarCatalogo);
 function cargarCatalogo(){
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
-            cargarXML();
+            cargarXML(this);
         }
     };
     xhr.open("GET", "cd_catalog.xml", true);
     xhr.send();
 }
-function cargarXML(){
+function cargarXML(xml){
     /* Capturar respuesta de la solicitud
     */
-   var docxml = xml.responseXML;
+   var docXML = xml.responseXML;
    var tabla = "<tr><th>Artista</th><th>Titulo</th></tr>";
-   var discos = docxml.getElementByTagName("CD");
+   var discos = docXML.getElementsByTagName("CD");
    for ( var i = 0; i < discos.length; i++){
        tabla += "<tr><td>";
-       tabla += discos[i].getElementByTagName("ARTIST")[0].textContent;
+       tabla += discos[i].getElementsByTagName("ARTIST")[0].textContent;
        tabla += "</td><td>";
-       tabla += discos[i].getElementByTagName("TITLE")[0].textContent;
+       tabla += discos[i].getElementsByTagName("TITLE")[0].textContent;
        tabla += "</td></tr>";
    }
    document.getElementById("demo").innerHTML = tabla;
