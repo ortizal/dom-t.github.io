@@ -31,50 +31,98 @@
                         </ul>
                     </li>
                     <li><a href=""> Departamentos </a>
-                    <ul>
-                        <li><a href="">Dirección</a></li>
-                        <li><a href="">Secretaria</a></li>
-                        <li><a href="">Educativo</a></li>
-                        <li><a href="">Laboral</a></li>
-                        <li><a href="">Juridico</a></li>
-                        <li><a href="">Trabajo Social</a></li>
-                        <li><a href="">Psicologia</a></li>
-                        <li><a href="">Medico</a></li>
-                        <li><a href="">Dactiloscopia y estadisticas</a></li>
-                        <li><a href="">Seguridad</a></li>
-                    </ul>
+                        <ul>
+                            <li><a href="">Dirección</a></li>
+                            <li><a href="">Secretaria</a></li>
+                            <li><a href="">Educativo</a></li>
+                            <li><a href="">Laboral</a></li>
+                            <li><a href="">Juridico</a></li>
+                            <li><a href="">Trabajo Social</a></li>
+                            <li><a href="">Psicologia</a></li>
+                            <li><a href="">Medico</a></li>
+                            <li><a href="">Dactiloscopia y estadisticas</a></li>
+                            <li><a href="">Seguridad</a></li>
+                        </ul>
                     </li>
-                    <li><a href="http://"> Visitas </a></li>
+                    <li><a href=""> Visitas </a></li>
                 </ul>
             </nav>
         </div>
         <div class="secction">
-            <form action="" method="post">
+            <form action="" method="post" id="pplData">
                 <section>
                     <div class="datos-ppl row">
-                        <div class="col-lg">
+                        <div class="txt-data col-lg">
                             <p>Nombre</p>
-                            <input type="text">
+                            <input type="text" name="txt_nombre" required>
                         </div>
-                        <div class="col-lg">
+                        <div class="txt-data col-lg">
                             <p>Apellido</p>
-                            <input type="text">
+                            <input type="text" name = "txt_apellido" required>
                         </div>
-                        <div class="col-lg">
+                        <div class="txt-data col-lg">
                             <p>Cedula</p>
-                            <input type="text">
+                            <input type="text" name = "txt_cedua" required>
                         </div>
-                        <div class="col-lg">
+                        <div class="txt-data col-lg">
                             <p>Delito</p>
-                            <input type="text">
+                            <input type="text" name = "txt_delito" required>
                         </div>
-                        <div class="col-lg">
-                            <p>Condena</p>
-                            <input type="text">
-                        </div>
-                        <div class="col-lg">
+                        <div class="txt-data col-lg">
                             <p>Nacionalidad</p>
-                            <select name="" id=""></select>
+                            <select id="listNacionalidades" name = "txt_nacionalidad" ></select>
+                        </div>
+                        <div class="txt-data col-lg">
+                            <input type="submit" value="Continuar" id="insPplData" class="continuar btn-block">
+                        </div>
+                    </div>
+                </section>
+            </form>
+            <form action="" method="post" id="ingresoData">
+                <section>
+                    <div class="row">
+                        <div class="col-lg">
+                            <p>N° Ingreso</p>
+                            <input type="text" name="txt_ingreso" required>
+                        </div>
+                        <div class="col-lg">
+                            <p>Fecha</p>
+                            <input type="date" name="txt_fecha" required>
+                        </div>
+                        <div class="col-lg">
+                            <p>Hora</p>
+                            <input type="time" name="txt_hora" required>
+                        </div>
+                        <div class="col-lg">
+                            <p>Boleta</p>
+                            <input type="text" name="txt_boleta" required>
+                        </div>
+                        <div class="col-lg">
+                            <p>Autoridad que disppone</p>
+                            <input type="text" name="txt_auDispone" required>
+                        </div>
+                        <div class="col-lg">
+                            <p>Procedencia</p>
+                            <input type="text" name="txt_procedencia" required>
+                        </div>
+                        <div class="col-lg">
+                            <p>Conduce Pol.</p>
+                            <input type="text" name="txt_poicia" required>
+                        </div>
+                        <div class="col-lg">
+                            <p>Telefono</p>
+                            <input type="text" name="txt_telefono" required>
+                        </div>
+                        <div class="col-lg">
+                            <p>Observaciones</p>
+                            <input type="text" name="txt_observaciones" required>
+                        </div>
+                        <div class="col-lg">
+                            <p>Detenido</p>
+                            <select name="txt_detenidos" id="listDetenidos"></select>
+                        </div>
+                        <div class="col-lg">
+                            <input type="submit" value="Continuar" id="insIngData" class="continuar btn-block">
                         </div>
                     </div>
                 </section>

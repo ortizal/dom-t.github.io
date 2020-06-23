@@ -72,6 +72,20 @@ form {
     border: rgb(16, 115, 245) 2px solid;
     border-radius: 15px;
 }
-form section .datos-ppl div {
-    margin: 1em;
+form section div div {
+    margin: 0.5em;
+    padding: 1em;
+}
+form section div div input, select {
+    margin: 0.5em;
+    padding: 0;
+    border: rgb(16, 115, 245) 2px solid;
+    border-radius: 10px;
+}
+form section div div .continuar {
+    position: relative;
+    padding: 0;
+    border: rgb(16, 115, 245) 2px solid;
+    border-radius: 10px;
+    width: 5em;
 }
