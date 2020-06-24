@@ -109,8 +109,9 @@ form section #seccion .categoria{
 }
 form section #seccion .categoria:hover{
     background:rgb(106, 201, 106, 30%) ;
+    cursor: pointer;
 }
-form section #seccion .categoria a{
+form section #seccion .categoria p{
     display: block;
     text-decoration: none;
     font-weight: 400;

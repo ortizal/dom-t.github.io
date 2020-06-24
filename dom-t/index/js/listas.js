@@ -1,21 +1,24 @@
 $(document).ready(function(){
-    localStorage.clear();
+   // localStorage.clear();
     //$formulario = $('#indexFormulario').serialize();
     $.ajax ({
         type: 'POST',
-        url:'../php/categoria.php'
+        url:'../php/categoria.php',
+        success:function(r){
+           $('#seccion').html(r);
+        }
     })
-    .done(function(r){
+    /* .done(function(r){
         $('#seccion').html(r);
     })
     .fail(function(){
         alert('Error en carga');
-    })
-    $('#seccion').on('change', function(){
+    }) */
+/*     $('#seccion').on('change', function(){
         
         var id = $('#seccion').val();
         consolelog(id);
-    })
+    }) */
     $.ajax ({
         type: 'POST',
         url:'../php/categoriaNav.php',
@@ -24,3 +27,6 @@ $(document).ready(function(){
         }
     });
 });
+function btnCategoria(){
+    alert("dsa");
+}
