@@ -57,6 +57,9 @@
     z-index: 1;
 }
 /* --------------FORM------------------ */
+/* .secction #ingresoData{
+    display: none;
+} */
 /* form section .datos-ppl {
     margin: 0.5em auto;
     border: rgb(16, 115, 245) 2px solid;
@@ -72,6 +75,11 @@ form {
     border: rgb(16, 115, 245) 2px solid;
     border-radius: 15px;
 }
+form section div div .continuar {
+    border: rgb(16, 115, 245) 2px solid;
+    border-radius: 10px;
+    width: 10em;
+}
 form section div div {
     margin: 0.5em;
     padding: 1em;
@@ -82,10 +90,22 @@ form section div div input, select {
     border: rgb(16, 115, 245) 2px solid;
     border-radius: 10px;
 }
-form section div div .continuar {
+/* .section {
+    background-color: rgba(0, 0, 0, .60);
+    width: 100%;
+    max-width: 500px;
+    margin: 48px auto;
+    color: #fff;
+    border-radius:  10px;
+    /* padding: 40px; 
     position: relative;
-    padding: 0;
-    border: rgb(16, 115, 245) 2px solid;
-    border-radius: 10px;
-    width: 5em;
+} */
+/* Ediciones de tablas */
+table tbody tr td img{
+    height: 30px;
+    width: 30px;
+}
+table tbody tr td img:hover{
+    cursor: pointer;
+  background: rgb(16, 115, 245, 10%);
 }
